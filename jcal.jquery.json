@@ -1,0 +1,43 @@
+{
+    "name": "jcal",
+    "title": "jCal",
+    "description": "jCal is a simple date-picking plugin that doesn't rely on jQuery UI. By default, it provides buttons for clearing the input and selecting months without selecting a specific day.",
+    "keywords": [
+        "date picker",
+        "calendar"
+    ],
+
+    "version": "0.1.1",
+    "author": {
+        "name": "Artlogic Media",
+        "url": "https://github.com/artlogicmedia/jcal"
+    },
+
+    "maintainers": [
+        {
+            "name": "Artlogic Media",
+            "email": "info@artlogic.net",
+            "url": "http://artlogic.net"
+        }
+    ],
+
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/artlogicmedia/jcal/blob/master/MIT-LICENSE.md"
+        },
+        {
+            "type": "GPL v2",
+            "url": "https://github.com/artlogicmedia/jcal/blob/master/GPLv2-LICENSE.md"
+        }
+    ],
+
+    "bugs": "https://github.com/artlogicmedia/jcal/issues",
+    "homepage": "https://github.com/artlogicmedia/jcal",
+    "docs": "",
+    "demo": "",
+    "download": "",
+    "dependencies": {
+        "jquery": ">=1.7.1"
+    }
+}
