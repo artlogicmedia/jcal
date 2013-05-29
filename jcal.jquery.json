@@ -35,10 +35,6 @@
     ],
 
     "bugs": "https://github.com/artlogicmedia/jcal/issues",
-    "homepage": "https://github.com/artlogicmedia/jcal",
-    "docs": "",
-    "demo": "",
-    "download": "",
     "dependencies": {
         "jquery": ">=1.7.1"
     }
