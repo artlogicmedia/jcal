@@ -3,49 +3,7 @@
  * Author: Peter Chater - Artlogic Media Ltd - http://www.artlogic.net/
  * Version: 0.1.1 (May 25, 2013)
  *
- * This plugin was written for Artlogic Media Ltd and handles date fields in our
- * house style. It may not be your house style. If you would like to use this
- * plugin, help yourself and adapt it as you want.
- *
- * It assumes that there are two input field on the html page - one which shows
- * a formatted date (e.g. '1 Jan 2013') and another hidden field which contains
- * the actual value that will be sent to the database, in mysql format, e.g.
- * '2013-01-01'. The 'value field' is the one with a 'name' attribute - the
- * formatted field does not need one. The formatted (visible) field is the one
- * on which we attach the jcal plugin.
- *
- * The html markup should look something like this:
- *
- *   <label for="f_mydate">Pick a date</label>
- *   <input type="hidden" id="f_mydate" name="mydate" value="2013-01-01" />
- *   <input type="text" class="jcal" data-value-field="f_mydate" data-jcal-render-to="#jcal" />
- *   <div id="jcal"></div>
- *
- * We're linking the 'formatted date' field to the 'value field' by means of the
- * 'data-value-field' attribute. We're also specifying a jQuery selector of a
- * div to which we want to render the calendar picker html. This is optional -
- * we could instead pop it up in a $.prompt() (jquery impromptu).
- *
- * We can then call the plugin (in this example on any element with a class 'jcal'):
- *
- *   $('input.jcal').each(function() {
- *       var obj = $(this);
- *       var value_field_id = obj.attr('data-value-field');
- *       obj.jcal({ 'value_field': value_field_id});
- *   });
- *
- * OPTIONS
- *
- * value_field       - The ID of the field n which to store the value posted
- *                     back to the server.
- * render_to         - The jQuery selector used to specify the div into which
- *                     the calendar will be rendered.
- * position          - Where to position the calendar. The options are:
- *                      'centered': The calendar will be centered in the middle
- *                                  of the window. This is the default value.
- *                      'positioned': The calendar will be positioned below the
- *                                    input field. This behaves more like the
- *                                    jQuery UI Datepicker plugin.
+ * See the README.md file for more information.
  *
  */
 
