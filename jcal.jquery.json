@@ -4,7 +4,9 @@
     "description": "jCal is a simple date-picking plugin that doesn't rely on jQuery UI. By default, it provides buttons for clearing the input and selecting months without selecting a specific day.",
     "keywords": [
         "date picker",
-        "calendar"
+        "calendar",
+        "form",
+        "input"
     ],
 
     "version": "0.1.1",

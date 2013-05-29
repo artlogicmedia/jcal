@@ -44,6 +44,41 @@ $('input.jcal').each(function() {
 -- *centered* - The calendar will be centered in the middle of the browser window. This is the default behaviour.
 -- *positioned* - The calendar will be positioned below the input field. This behaves more like the [jQuery UI Datepicker](http://jqueryui.com/datepicker/) plugin.
 
+### $.jcal.cal()
+
+The `$.jcal` object provides a function for generating calendars and blocks of dates, `$.jcal.cal()`. Given a year, month and optionally the currently selected day, this function returns a multidimensional array, where each row itself contains exactly seven items representing the days of the week, starting at Monday. Each day is represented as an array comprising `[year, month, day, visible, selected]`.
+
+For example, for the selected date 3rd May 2013, our array would look like this:
+```
+[
+    [                        // first row of results
+        [2013, 4, 29, 0, 0], // 29th Apr, not visible, not selected
+        [2013, 4, 30, 0, 0],
+        [2013, 5, 1, 1, 0],  // 1st May, visible, not selected
+        [2013, 5, 2, 1, 0],
+        [2013, 5, 3, 1, 1],  // 3rd May, visible, selected
+        [2013, 5, 4, 1, 0],
+        [2013, 5, 5, 1, 0]
+    ],
+    [                        // second row of results
+        [2013, 5, 6, 1, 0],
+        [2013, 5, 7, 1, 0],
+        [2013, 5, 8, 1, 0],
+        // etc...
+    ],
+    // down to...
+    [                        // last (5th) row of results
+        [2013, 5, 27, 1, 0],
+        [2013, 5, 28, 1, 0],
+        [2013, 5, 29, 1, 0],
+        [2013, 5, 30, 1, 0],
+        [2013, 5, 31, 1, 0],
+        [2013, 5, 1, 0, 0],  // 1st June, not visible, not selected
+        [2013, 5, 2, 0, 0]
+    ]
+ ]
+```
+
 ### A note about formatting
 
 This plugin was written for Artlogic Media Ltd and handles date fields in our house style (both in terms of the hidden value and the display value). It may not be your house style. If you would like to use this plugin, help yourself and adapt it as you want.
