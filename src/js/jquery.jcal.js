@@ -455,8 +455,8 @@
                             date_str = btn_obj.data('date'),
                             segs = date_str.split('-'),
                             year = segs[0],
-                            month = parseInt(segs[1]),
-                            day = parseInt(segs[2]);
+                            month = parseInt(segs[1], 10),
+                            day = parseInt(segs[2], 10);
                         set_value(year, month, day);
                         _jcal_hide();
                     });
@@ -491,8 +491,8 @@
                                 // go to next, previous month...
                                 // The action should be in the form '2013-12'...
                                 var segs = action.split('-');
-                                year = parseInt(segs[0]);
-                                month = parseInt(segs[1]);
+                                year = parseInt(segs[0], 10);
+                                month = parseInt(segs[1], 10);
                                 current_date = [year, month, selected_day];
                                 render_cal(year, month, selected_day);
                         }
