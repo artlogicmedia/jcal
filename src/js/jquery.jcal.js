@@ -383,12 +383,20 @@
 
             self.rendered_cal = $(options.render_to).addClass(options.position == 'positioned' ? 'jcal-float-positioned' : 'jcal-float-centered')
                                     .hide();
+
+            if (!self.rendered_cal.length) {
+                if (console && console.error) {
+                    console.error('jCal could not find the element for ' + options.render_to);
+                }
+                return self;
+            }
+
             var current_date = null,
                 set_value = function(year, month, day) {
-                    var year_str = year.toString();
-                    var month_str = (month < 10) ? '0' + month.toString() : month.toString();
-                    var day_str = (day < 10) ? '0' + day.toString() : day.toString();
-                    var numeric_date, formatted_date;
+                    var year_str = year.toString(),
+                        month_str = (month < 10) ? '0' + month.toString() : month.toString(),
+                        day_str = (day < 10) ? '0' + day.toString() : day.toString(),
+                        numeric_date, formatted_date;
                     if (day) {
                         numeric_date = year_str + '-' + month_str + '-' + day_str;
                         formatted_date = day.toString() + ' ' + $.jcal.short_month_names[month - 1] + ' ' + year.toString();
