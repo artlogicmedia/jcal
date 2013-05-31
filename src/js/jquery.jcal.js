@@ -342,7 +342,7 @@
             if (value_field.length && formatted_value_field.length) {
                 var v = value_field.val();
 
-                if (v && v.indexOf('-') > -1) {
+                if (v && v.indexOf('-') > -1 && v != '0000-00-00') {
                     var segs = v.split('-'),
                         year = parseInt(segs[0], 10),
                         month = parseInt(segs[1], 10),
@@ -366,11 +366,12 @@
                     year,
                     month,
                     day,
-                    selected_day;
+                    selected_day,
+                    df = selected_date.split(' ')[0];
 
-                if (selected_date) {
+                if (df && df.length && df != '0000-00-00') {
                     // We're expecting a date string in the format '0000-00-00'
-                    segs = selected_date.split(' ')[0].split('-');
+                    segs = df.split('-');
                     year = parseInt(segs[0], 10);
                     // Convert to JavaScript's native zero-based index
                     month = parseInt(segs[1], 10) - 1;
