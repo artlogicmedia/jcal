@@ -284,6 +284,7 @@
                     self.rendered_cal.fadeOut(150, function() {
                         self.rendered_cal.hide();
                     });
+                    $('body').off('keydown.jcal');
                 },
                 _jcal_destroy = function() {
                     if (self.rendered_cal) {
@@ -291,7 +292,7 @@
                         self.rendered_cal.empty();
                     }
                     self.data('jcal-initted', false);
-                    $('body').off('focus.jcal');
+                    $('body').off('focus.jcal keydown.jcal');
                 },
                 options;
 
@@ -416,6 +417,19 @@
                 render_cal = function(year, month, selected_day) {
 
                     var cal_visible = self.rendered_cal.is(':visible');
+
+                    $('body')
+                        // Clean up possible duplicate events
+                        .off('keydown.jcal')
+                        .on('keydown.jcal', function(e) {
+                        // In theory, intercept this on the body, so before it
+                        // gets to jQuery UI's version of this event listener on
+                        // the document (so we don't close the window behind)
+                        if (options.close_on_esc && e.keyCode == 27) {
+                            e.stopPropagation();
+                            _jcal_hide();
+                        }
+                    });
 
                     self.rendered_cal
                         .html($.jcal.render_html(year, month, self.jcal_selected_year,

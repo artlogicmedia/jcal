@@ -40,6 +40,7 @@ $('input.jcal').each(function() {
 - *position* - Where to position the calendar when it appears. The options are:
     * *centered* - The calendar will be centered in the middle of the browser window. This is the default behaviour.
     * *positioned* - The calendar will be positioned below the input field. This behaves more like the [jQuery UI Datepicker](http://jqueryui.com/datepicker/) plugin.
+- *close_on_esc* - Binds a keydown event handler to the body to listen for an "ESC" keypress. When triggered, the calendar will be hidden (and the listener unbound).
 
 ### API
 
