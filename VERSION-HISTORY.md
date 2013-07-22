@@ -1,6 +1,10 @@
 
 # jCal Version History
 
+## 0.1.7
+
+* Fix for overlay/button interactions
+
 ## 0.1.5
 
 * Added 'weekday_names' as a seperate property.

@@ -422,14 +422,14 @@
                         // Clean up possible duplicate events
                         .off('keydown.jcal')
                         .on('keydown.jcal', function(e) {
-                        // In theory, intercept this on the body, so before it
-                        // gets to jQuery UI's version of this event listener on
-                        // the document (so we don't close the window behind)
-                        if (options.close_on_esc && e.keyCode == 27) {
-                            e.stopPropagation();
-                            _jcal_hide();
-                        }
-                    });
+                            // In theory, intercept this on the body, so before it
+                            // gets to jQuery UI's version of this event listener on
+                            // the document (so we don't close the window behind)
+                            if (options.close_on_esc && e.keyCode == 27) {
+                                e.stopPropagation();
+                                _jcal_hide();
+                            }
+                        });
 
                     self.rendered_cal
                         .html($.jcal.render_html(year, month, self.jcal_selected_year,
@@ -460,9 +460,10 @@
                             body.append(self.rendered_cal);
                             $('#jcal-overlay'+(options.render_to ? ', '+options.render_to : ''))
                                 .unbind('click')
-                                .on('click', '.jcal-obj, .jcal-obj *', function(e) {
-                                    e.stopPropagation();
-                                }).one('click', function(e) {
+                                .on('click', function(e) {
+                                    if (e.target !== this) {
+                                        return;
+                                    }
                                     e.stopPropagation();
                                     _jcal_hide(self.rendered_cal);
                                 });
