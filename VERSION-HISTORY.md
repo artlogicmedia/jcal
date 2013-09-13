@@ -1,6 +1,10 @@
 
 # jCal Version History
 
+## 0.1.8
+
+* Fix incorrect weekday assignments
+
 ## 0.1.7
 
 * Fix for overlay/button interactions

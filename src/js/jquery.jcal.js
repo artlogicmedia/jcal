@@ -27,7 +27,7 @@
             'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         month_names: ['January', 'February', 'March', 'April', 'May', 'June',
             'July', 'August', 'September', 'October', 'November', 'December'],
-        weekday_names: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        weekday_names: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 
         get_last_day_of_month: function(year, month, return_as_date) {
 
