@@ -1,6 +1,11 @@
 
 # jCal Version History
 
+## 0.1.9
+
+* Fix for weekday assignments (again). They would occasionally become misaligned
+  by one due to a bug in the week-generating code.
+
 ## 0.1.8
 
 * Fix incorrect weekday assignments

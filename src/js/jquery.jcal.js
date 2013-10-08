@@ -1,7 +1,7 @@
 /* jQuery.jcal - a calendar picker plugin.
  *
  * Author: Peter Chater - Artlogic Media Ltd - http://www.artlogic.net/
- * Version: 0.1.5
+ * Version: 0.1.9
  *
  * See the README.md file for more information.
  *
@@ -122,7 +122,6 @@
                 f = new Date(),
 
                 first_day_of_week,
-                first_day_of_week_index,
                 days = [],
                 day,
                 visible,
@@ -131,15 +130,13 @@
                 stop = false,
                 weeks = [],
                 last_week = false,
-                n = -1, i;
+                i;
 
             f.setFullYear(year, month_index, 1);
             first_day_of_week = f.getDay();
-            first_day_of_week_index = first_day_of_week - 1;
 
-            for (i = first_day_of_week_index - 1; i > -1; i--) {
-                n += 1;
-                days[i] = [last_year, last_month, last_day_of_last_month - n, 0, 0];
+            for (i = first_day_of_week - 1; i > -1; i--) {
+                days[i] = [last_year, last_month, last_day_of_last_month - i, 0, 0];
             }
 
             i = -1;
