@@ -8,8 +8,7 @@ alternatives.
 The interface provides buttons for selecting the current day, the month (without
 specifying a day), or clearing the input field altogether.
 
-Although it does not require
-[Twitter Bootstrap](http://twitter.github.io/bootstrap/), jCal works nicely with
+Although it does not require [Twitter Bootstrap][1], jCal works nicely with
 it, and uses the Bootstrap button classes on the UI controls.
 
 ## Using jCal
@@ -57,8 +56,7 @@ $('input.jcal').each(function() {
     * *centered* - The calendar will be centered in the middle of the browser
       window. This is the default behaviour.
     * *positioned* - The calendar will be positioned below the input field. This
-      behaves more like the
-      [jQuery UI Datepicker](http://jqueryui.com/datepicker/) plugin.
+      behaves more like the [jQuery UI Datepicker][2] plugin.
 - *close_on_esc* - Binds a keydown event handler to the body to listen for an 
   "ESC" keypress. When triggered, the calendar will be hidden (and the listener
   unbound).
@@ -142,10 +140,16 @@ modifying the $.jcal.weekday_names`, `$.jcal.short_month_names`, and
 ## License
 
 jCal is dual-licensed under the
-[MIT license](/artlogicmedia/jcal/blob/master/MIT-LICENSE.md)
-and the
-[GNU Public License version 2](/artlogicmedia/jcal/blob/master/GPLv2-LICENSE.md).
+[MIT license][3] and the [GNU Public License version 2][4].
 
 ## Authorship information
 
-jCal is written and maintained by [Artlogic Media](http://artlogic.net/).
+jCal is written and maintained by [Artlogic Media][5].
+
+
+
+[1]: http://twitter.github.io/bootstrap/
+[2]: http://jqueryui.com/datepicker/
+[3]: https://github.com/artlogicmedia/jcal/blob/master/MIT-LICENSE.md
+[4]: https://github.com/artlogicmedia/jcal/blob/master/GPLv2-LICENSE.md
+[5]: http://artlogic.net/
