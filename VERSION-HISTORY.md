@@ -1,6 +1,12 @@
 
 # jCal Version History
 
+## 0.1.10
+
+* Added an `updated.jcal` event when elements are modified. This avoids
+  confusion with any form `change` events.
+* Added buttons for skipping forward/backward by year.
+
 ## 0.1.9
 
 * Fix for weekday assignments (again). They would occasionally become misaligned

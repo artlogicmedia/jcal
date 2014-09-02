@@ -61,6 +61,20 @@ $('input.jcal').each(function() {
   "ESC" keypress. When triggered, the calendar will be hidden (and the listener
   unbound).
 
+### Events
+
+When updating the values of the form elements that jCal uses, it makes use of
+jQuery's `.val()` method, which does not trigger a `change` event on the updated
+elements.
+
+If you need to detect when jCal updates either the display value or the hidden
+input value, you can watch either element for an `updated.jcal` event, like so:
+```
+$('input.jcal').on('updated.jcal', function() {
+    // do stuff
+});
+```
+
 ### API
 
 There are a few API commands you can use to control the calendar in a limited
@@ -125,6 +139,14 @@ For example, for the selected date 3rd May 2013, our array would look like this:
  ]
 ```
 
+### Minified version
+
+If you have `make` and [UglifyJS][6] installed, you can make a minified version
+of jCal with just
+```
+$ make
+```
+
 ### A note about formatting
 
 This plugin was written for Artlogic Media Ltd and handles date fields in our
@@ -153,3 +175,4 @@ jCal is written and maintained by [Artlogic Media][5].
 [3]: https://github.com/artlogicmedia/jcal/blob/master/MIT-LICENSE.md
 [4]: https://github.com/artlogicmedia/jcal/blob/master/GPLv2-LICENSE.md
 [5]: http://artlogic.net/
+[6]: https://github.com/mishoo/UglifyJS

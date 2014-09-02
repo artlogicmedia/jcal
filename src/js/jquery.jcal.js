@@ -1,7 +1,7 @@
 /* jQuery.jcal - a calendar picker plugin.
  *
  * Author: Peter Chater - Artlogic Media Ltd - http://www.artlogic.net/
- * Version: 0.1.9
+ * Version: 0.1.10
  *
  * See the README.md file for more information.
  *
@@ -255,9 +255,16 @@
                 '<tbody>' + body_rows + '</tbody>' +
                 '</table>' +
                 '<table class="jcal-footer-tbl"><tbody>' +
-                    '<td class="jcal-footer-left"><a href="#" class="btn btn-small jcal-btn jcal-btn-goto" data-goto="today">Today</a></td>' +
-                    '<td class="jcal-footer-center"><a href="#" class="btn btn-small jcal-btn jcal-btn-goto" data-goto="empty-field">Empty field</a></td>' +
-                    '<td class="jcal-footer-right"><a href="#" class="btn btn-small jcal-btn jcal-btn-goto" data-goto="this-month">Month</a></td>' +
+                    '<tr>' +
+                        '<td class="jjcal-footer-left"><a href="#" class="btn btn-small jcal-btn jcal-btn-goto goto-year" data-goto="' + (this_year - 1) + '-' + month + '">&lt; '+(this_year - 1)+'</a></td>' +
+                        '<td class=""></td>' +
+                        '<td class="jcal-footer-right"><a href="#" class="btn btn-small jcal-btn jcal-btn-goto goto-year" data-goto="' + (this_year + 1) + '-' + month + '">'+(this_year + 1)+' &gt;</a></td>' +
+                    '</tr>' +
+                    '<tr>' +
+                        '<td class="jcal-footer-left"><a href="#" class="btn btn-small jcal-btn jcal-btn-goto" data-goto="today">Today</a></td>' +
+                        '<td class="jcal-footer-center"><a href="#" class="btn btn-small jcal-btn jcal-btn-goto" data-goto="empty-field">Empty field</a></td>' +
+                        '<td class="jcal-footer-right"><a href="#" class="btn btn-small jcal-btn jcal-btn-goto" data-goto="this-month">Month</a></td>' +
+                    '</tr>' +
                 '</tbody></table>' +
                 '</div>';
 
@@ -409,6 +416,12 @@
                     } else {
                         value_field.val(numeric_date);
                     }
+                    // Custom event so that changes to the display field can be
+                    // tracked. We do not want to fire a 'change' event here,
+                    // because we don't want to trigger default form behaviours
+                    // (the user can set this up manually).
+                    formatted_value_field.trigger('updated.jcal');
+                    value_field.trigger('updated.jcal');
                 },
 
                 render_cal = function(year, month, selected_day) {
