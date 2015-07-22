@@ -1,2 +1,8 @@
-
+# Annoying MacOS junk
 .DS_Store
+# Build artefacts
+build/*
+# Vim leftovers
+*.swp
+*.swo
+
